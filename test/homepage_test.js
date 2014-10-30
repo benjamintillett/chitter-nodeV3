@@ -19,4 +19,28 @@ describe('home page', function() {
   it('should show a welcome message', function(){
     expect(browser.text('h1')).to.eql('Well this is a relief');
   });
+
+  it("has a form to add a peep",function(){
+    browser.
+      fill("peep", "hello this is marvelous").
+      pressButton("Submit")
+  })
+
+  describe("Peeping",function(){
+    before(function(done){
+      browser.visit('/',function(){
+        browser.
+          fill("peep", "hello this is marvelous").
+          pressButton("Submit",done)
+      })
+    })
+
+    it("thanks you for peeping",function(){
+        expect(browser.text(".alert")).to.eql("Thankyou for Peeping!");
+    });
+
+  })
+
+
+
 });
