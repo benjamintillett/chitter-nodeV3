@@ -29,7 +29,7 @@ var config = {
       name: 'chitter-node3'
     },
     port: 3000,
-    db: 'mongodb://localhost/chitter-node3-production'
+    db: process.env.MONGOLAB_URI
     
   }
 };
