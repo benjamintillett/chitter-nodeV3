@@ -3,9 +3,9 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var PeepSchema = new Schema({
-  peep: String,
+var MessageSchema = new Schema({
+  text: String,
 });
 
-mongoose.model('Peep', PeepSchema);
+mongoose.model('Message', MessageSchema);
 

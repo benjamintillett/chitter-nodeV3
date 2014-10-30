@@ -17,12 +17,12 @@ describe('home page', function() {
   });  
 
   it('should show a welcome message', function(){
-    expect(browser.text('h1')).to.eql('Well this is a relief');
+    expect(browser.text('h1')).to.eql('Welcome to Node Chat');
   });
 
   it("has a form to add a peep",function(){
     browser.
-      fill("peep", "hello this is marvelous").
+      fill("message", "hello this is marvelous").
       pressButton("Submit")
   });
 

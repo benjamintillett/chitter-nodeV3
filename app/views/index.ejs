@@ -1,16 +1,20 @@
 <% include header %>
 
-  <h1>Well this is a relief</h1>
-  <p>Well this is a relief</p>
+  <h1>Welcome to Node Chat</h1>
+  
+  <h2>New message</h2>
 
   <form action="/" method="post">
-  	<input type="text" name="peep">
+  	<input type="text" name="message">
   	<input type="submit" value="Submit">
   </form>
 
-  <div class="peeps">
-	  <% peeps.forEach(function(peep){ %>
-	  	<%= peep.peep %>
+
+  <h2>Messages</h2>
+
+  <div class="messages">
+	  <% messages.forEach(function(message){ %>
+	  	<%= message.text %>
 	  <% }) %>
   </div>
 <% include footer %>

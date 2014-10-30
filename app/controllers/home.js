@@ -1,7 +1,7 @@
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
-  Peep = mongoose.model('Peep');
+  Message = mongoose.model('Message');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -9,25 +9,25 @@ module.exports = function (app) {
 
 router.get('/', function (req, res, next) {
 
-  Peep.find(function (err, peeps) {
+  Message.find(function (err, messages) {
     if (err) return next(err);
     res.render('index', {
       title: 'Generator-Express MVC',
-      peeps: peeps
+      messages: messages
     });
   });
 });
 
 router.post("/", function (req,res,next){
 
-  var peep = new Peep({ peep: req.body.peep });
-  peep.save(function (err, fluffy) {
+  var message = new Message({ text: req.body.message });
+  message.save(function (err, fluffy) {
     if (err) {
       return console.error(err);
     }
     else {
       res.render('new',{
-        peep: peep
+        message: message
       })
     }
   });
