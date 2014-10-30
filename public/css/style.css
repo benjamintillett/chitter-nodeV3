@@ -13,14 +13,11 @@ ul {
     list-style-type: none;
 }
 
-li.message {
-	margin:15px 0px;
-	width:100%;
-	text-align: center;
-	background-color: #912CEE;
-	padding:10px 0px;
-	color: #fff;
-	border-radius: 5px
+li.panel {
+	padding:15px 0px;
 
+}
 
+form{
+	padding:15px 50px;
 }

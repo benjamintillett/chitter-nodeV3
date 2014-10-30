@@ -42,4 +42,7 @@ describe('messaging', function() {
 
 
   })
+   after(function(done) {
+      this.server.close(done);
+  });
  });
