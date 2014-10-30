@@ -34,5 +34,12 @@ describe('peeping', function() {
       expect(browser.text(".peep")).to.eql("hello this is marvelous")
     })
 
+    it("displays all peeps on the homepage", function(){
+		browser.visit('/',function(){
+    		expect(browser.text(".peeps")).to.contain("hello this is marvelous")
+    	});
+    });
+
+
   })
  });

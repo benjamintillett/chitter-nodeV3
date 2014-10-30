@@ -8,8 +8,9 @@
   	<input type="submit" value="Submit">
   </form>
 
-  <% peeps.forEach(function(peep){ %>
-  	<%= peep.peep %>
-  <% }) %>
-
+  <div class="peeps">
+	  <% peeps.forEach(function(peep){ %>
+	  	<%= peep.peep %>
+	  <% }) %>
+  </div>
 <% include footer %>

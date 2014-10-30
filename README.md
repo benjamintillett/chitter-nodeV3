@@ -1,7 +1,7 @@
-Chitter V3
+Node chat
 ==========
 
-Third Attempt a 
+A simple chat application written in node
 
 Skills learnt/used
 -----------------
@@ -9,6 +9,7 @@ TTD - with Mocha and zombie
 Nosql - with MongoDb
 Node
 Express
+Mocha
 
 
 How to use
@@ -17,7 +18,7 @@ How to use
 Clone the repository:
 
 ```shell 
-$ git clone git@github.com:benjamintillett/chitter-nodeV3.git
+$ git clone git@github.com:benjamintillett/node_chat.git
 ```
 
 
