@@ -13,6 +13,7 @@ var models = glob.sync(config.root + '/app/models/*.js');
 models.forEach(function (model) {
   require(model);
 });
+
 var app = express();
 
 require('./config/express')(app, config);
@@ -20,6 +21,6 @@ require('./config/express')(app, config);
 
 module.exports = app;
 if (!module.parent) {
-  console.log('Server running on http://localhost:3000')
-  app.listen(3000)
+  console.log('Server running on http://localhost:3000 test ')
+  app.listen(process.env.PORT || 5000)
 }
