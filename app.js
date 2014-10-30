@@ -21,6 +21,6 @@ require('./config/express')(app, config);
 
 module.exports = app;
 if (!module.parent) {
-  console.log('Server running on http://localhost:3000 test ')
-  app.listen(process.env.PORT || 5000)
+  console.log('Server running on port' + config.port)
+  app.listen(config.port)
 }
