@@ -9,7 +9,7 @@ var config = {
       name: 'chitter-node3'
     },
     port: 3000,
-    db: 'mongodb://localhost/chitter-node3-development'
+    db: "mongodb://heroku_app31131782:t79lde00lc2a7eqdnik8nh9rvo@ds047950.mongolab.com:47950/heroku_app31131782"
     
   },
 
