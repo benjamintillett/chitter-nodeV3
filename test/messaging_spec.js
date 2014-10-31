@@ -17,7 +17,7 @@ describe('messaging', function() {
     browser.visit('/', done);
   });
 
-  describe("messaging",function(){
+  describe("creating a message",function(){
     before(function(done){
       browser.visit('/',function(){
         browser.
@@ -31,12 +31,16 @@ describe('messaging', function() {
     });
 
     it("displays you my message", function(){
-      expect(browser.text(".message")).to.eql("hello this is marvelous")
+      expect(browser.text(".message")).to.eql("hello this is marvelous");
     })
+
+    it("redirects to the homepage",function(){
+      expect(browser.text("h1.welcome-message")).to.eql("Welcome to Node Chat");
+    });
 
     it("displays all messages on the homepage", function(){
 		browser.visit('/',function(){
-    		expect(browser.text(".messages")).to.contain("hello this is marvelous")
+    		expect(browser.text(".messages")).to.contain("hello this is marvelous");
     	});
     });
 

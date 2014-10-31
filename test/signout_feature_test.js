@@ -20,12 +20,12 @@ describe('Signout feature', function() {
     before(function(done){
       browser.
         fill("username", "Fantastic Mr Fox").
-        pressButton("Signup",done)
+        pressButton("Sign up",done)
     });
     
     it("a user can sign out", function(){
       browser.pressButton("Sign out").then(function(){
-        expect(browser.text('h3.signup')).to.eql('Please sign up!');
+        expect(browser.text('button.signup')).to.eql('Sign up');
       });
     });
   });

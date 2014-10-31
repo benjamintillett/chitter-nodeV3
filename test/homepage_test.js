@@ -17,7 +17,7 @@ describe('home page', function() {
   });  
 
   it('should show a welcome message', function(){
-    expect(browser.text('h4')).to.eql('Welcome to Node Chat');
+    expect(browser.text('h1.welcome-message')).to.eql('Welcome to Node Chat');
   });
 
   it("has a form to add a peep",function(){

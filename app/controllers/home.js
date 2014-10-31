@@ -26,9 +26,7 @@ router.post("/", function (req,res,next){
       return console.error(err);
     }
     else {
-      res.render('new',{
-        message: message
-      })
+      res.redirect("/")
     }
   });
 });

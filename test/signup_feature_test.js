@@ -17,14 +17,14 @@ describe('Signup feature', function() {
   });  
 
   it('has a sign up form', function(){
-    expect(browser.text('h3.signup')).to.eql('Please sign up!');
+    expect(browser.text('button.signup')).to.eql('Sign up');
   });
 
 
   it("a user can sign up", function(){
     browser.
       fill("username", "Fantastic Mr Fox").
-      pressButton("Signup",function(){
+      pressButton("Sign up",function(){
         expect(browser.text('h4.user')).to.eql("Welcome: Fantastic Mr Fox")
       });
   });
