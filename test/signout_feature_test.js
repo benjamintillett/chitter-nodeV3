@@ -24,13 +24,10 @@ describe('Signout feature', function() {
     });
     
     it("a user can sign out", function(){
-      browser.pressButton("Sign out",function(){
+      browser.pressButton("Sign out").then(function(){
         expect(browser.text('h3.signup')).to.eql('Please sign up!');
-      })
-    })  
-
-
-
+      });
+    });
   });
 
 

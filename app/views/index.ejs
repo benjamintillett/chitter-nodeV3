@@ -1,38 +1,32 @@
 <% include header %>
 
-  <h4>Welcome to Node Chat</h4>
+  <% if(username) { %>
+      <h1 class="user">Welcome: <%= username %><h1>
+  <% } else { %>
+      <h1>Welcome to Node Chat</h1>
+  <% } %>
+  
   <br>
   <div class="panel">
   
-    <% if(username) { %>
-      <br>
-      <h4 class="user">Welcome: <%= username %><h4>
-    <% } else { %>
-    
-      <form role="form" action="/signup" method="post">
-        <h3 class="signup">Please sign up!</h3>      
-        <div class="form-group">
-          <input type="text" class="form-control" name="username">
-        </div>
-        <button type="submit" class="btn btn-info">Signup</button>
-      </form>
-    
-    <% } %>
+
 
     <form role="form" action="/" method="post">
     <h3>New message</h3>
       <div class="form-group">
     	   <textarea class="form-control" rows="3" name="message"></textarea>
       </div>
-    	<button type="submit" class="btn btn-info">Submit</button>
+      <div class="form-group">
+    	   <button type="submit" class="btn btn-info">Submit</button>
+      </div>
     </form>
   </div>
 
 
   <br>
 
-  <h3>Messages</h3>
-
+  <h1>Messages</h1>
+  <br>
   <ul class="messages">
     <% messages.forEach(function(message){ %>
 	     <li class="panel">  	

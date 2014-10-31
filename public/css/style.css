@@ -1,6 +1,6 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-align: center;
+	/*text-align: center;*/
 }
 .container {
 	width:80%;
@@ -14,10 +14,11 @@ ul {
 }
 
 li.panel {
-	padding:15px 0px;
+	padding:15px 15px;
 
 }
 
 form{
-	padding:15px 50px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
