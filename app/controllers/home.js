@@ -14,7 +14,9 @@ router.get('/', function (req, res, next) {
       title: 'Generator-Express MVC',
       messages: messages,
       username: req.session.username,
-      alert: req.flash('alert')
+      alert: req.flash('alert'),
+      users_online: users_online,
+      user_colors: user_colors
     });
   });
 });
@@ -38,8 +40,19 @@ router.post("/signout",function(req,res,next){
   res.redirect("/")
 });
 
-
 router.post("/signup",function(req,res,next){
   req.session.username = req.body.username;
   res.redirect("/");
 })
+
+
+
+var users_online = ["Benjamin Tillett","Gandhi","Micheal Jackson","Charles Mingus","User 7","Bobby Brown","Benjamin Tillett","Gandhi","Micheal Jackson","Charles Mingus","User 7","Bobby Brown"]
+var user_colors = ["info", "success","danger","warning","active"]
+
+
+
+
+
+
+

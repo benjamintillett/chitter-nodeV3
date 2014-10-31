@@ -2,9 +2,14 @@ process.env.NODE_ENV = 'test';
 var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
+var io = require('socket.io-client');
+var socketCleaner = require('./socketCleaner.js');
 
 describe('home page', function() {
+  
   var browser;
+  var socket;
+  socketCleaner()
   
   before(function() {
     this.server = server.listen(3000);
@@ -25,10 +30,5 @@ describe('home page', function() {
       fill("message", "hello this is marvelous").
       pressButton("Submit")
   });
-
-  after(function(done) {
-      this.server.close(done);
-  });
-
 
 });

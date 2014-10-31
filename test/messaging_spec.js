@@ -2,11 +2,17 @@ process.env.NODE_ENV = 'test';
 var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
-
+var io = require('socket.io-client');
+var socketCleaner = require('./socketCleaner.js');
 
 describe('messaging', function() {
-  var browser;
-  
+    var browser;
+
+
+    var socket;
+
+    socketCleaner()
+
   before(function() {
     this.server = server.listen(3000);
     // initialize the browser using the same port as the test application
@@ -35,14 +41,11 @@ describe('messaging', function() {
     });
 
     it("displays all messages on the homepage", function(){
-		browser.visit('/',function(){
+		browser.visit('/').then(function(){
     		expect(browser.text(".messages")).to.contain("hello this is marvelous");
     	});
     });
-
-
-  })
-   after(function(done) {
-      this.server.close(done);
   });
  });
+
+
