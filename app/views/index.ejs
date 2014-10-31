@@ -27,6 +27,10 @@
 
   <h1>Messages</h1>
   <br>
+
+  <% if(alert.length !== 0) { %>
+    <div class="alert alert-success" role="alert"><%= alert %></div>
+  <% } %>
   <ul class="messages">
     <% messages.forEach(function(message){ %>
 	     <li class="panel">  	

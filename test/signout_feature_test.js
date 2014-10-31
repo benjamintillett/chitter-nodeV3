@@ -28,7 +28,7 @@ describe('Signout feature', function() {
         expect(browser.text('button.signup')).to.eql('Sign up');
       });
     });
-  });
+  }); 
 
 
   after(function(done) {

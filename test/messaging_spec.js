@@ -30,10 +30,6 @@ describe('messaging', function() {
       expect(browser.text(".alert")).to.eql("Thankyou for messaging!");
     });
 
-    it("displays you my message", function(){
-      expect(browser.text(".message")).to.eql("hello this is marvelous");
-    })
-
     it("redirects to the homepage",function(){
       expect(browser.text("h1.welcome-message")).to.eql("Welcome to Node Chat");
     });

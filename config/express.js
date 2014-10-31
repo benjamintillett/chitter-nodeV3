@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var session = require('express-session');
+var flash = require('connect-flash');
 
 module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
@@ -20,7 +21,7 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(session({secret: 'keyboard cat', saveUninitialized: true, resave: true}));
-
+  app.use(flash());
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
