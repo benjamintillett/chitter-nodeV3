@@ -21,6 +21,6 @@ require('./config/express')(app, config);
 
 module.exports = app;
 if (!module.parent) {
-  console.log('Server running on port' + config.port)
+  console.log('Server running on port ' + config.port)
   app.listen(config.port)
 }

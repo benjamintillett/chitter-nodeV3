@@ -33,6 +33,12 @@ router.post("/", function (req,res,next){
   });
 });
 
+router.post("/signout",function(req,res,next){
+  req.session.username = null;
+  res.redirect("/")
+});
+
+
 router.post("/signup",function(req,res,next){
   req.session.username = req.body.username;
   Message.find(function (err, messages) {
@@ -43,6 +49,5 @@ router.post("/signup",function(req,res,next){
       username: req.session.username
     });
   });
-
 
 })

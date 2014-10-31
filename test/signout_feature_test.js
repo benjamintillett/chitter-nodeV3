@@ -3,7 +3,7 @@ var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
 
-describe('Signup feature', function() {
+describe('Signout feature', function() {
   var browser;
   
   before(function() {
@@ -16,17 +16,21 @@ describe('Signup feature', function() {
     browser.visit('/', done);
   });  
 
-  it('has a sign up form', function(){
-    expect(browser.text('h3.signup')).to.eql('Please sign up!');
-  });
+  describe("a signed in user",function(){
+    before(function(done){
+      browser.
+        fill("username", "Fantastic Mr Fox").
+        pressButton("Signup",done)
+    });
+    
+    it("a user can sign out", function(){
+      browser.pressButton("Sign out",function(){
+        expect(browser.text('h3.signup')).to.eql('Please sign up!');
+      })
+    })  
 
 
-  it("a user can sign up", function(){
-    browser.
-      fill("username", "Fantastic Mr Fox").
-      pressButton("Signup",function(){
-        expect(browser.text('h4.user')).to.eql("Welcome: Fantastic Mr Fox")
-      });
+
   });
 
 
