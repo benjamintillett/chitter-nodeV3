@@ -42,12 +42,13 @@ router.post("/signout",function(req,res,next){
 
 router.post("/signup",function(req,res,next){
   req.session.username = req.body.username;
+  users_online.push(req.body.username)
   res.redirect("/");
 })
 
 
 
-var users_online = ["Benjamin Tillett","Gandhi","Micheal Jackson","Charles Mingus","User 7","Bobby Brown","Benjamin Tillett","Gandhi","Micheal Jackson","Charles Mingus","User 7","Bobby Brown"]
+var users_online = ["Benjamin Tillett"]
 var user_colors = ["info", "success","danger","warning","active"]
 
 

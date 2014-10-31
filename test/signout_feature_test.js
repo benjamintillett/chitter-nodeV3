@@ -31,6 +31,4 @@ describe('Signout feature', function() {
       });
     });
   }); 
-
-
 });
