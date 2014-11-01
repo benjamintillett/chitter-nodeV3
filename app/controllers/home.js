@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
 
 router.post("/", function (req,res,next){
 
-  var message = new Message({ text: req.body.message });
+  var message = new Message({ text: req.body.message, user_id: req.session.user_id, username: req.session.username });
   message.save(function (err, fluffy) {
     if (err) {
       return console.error(err);

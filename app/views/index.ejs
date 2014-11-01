@@ -34,6 +34,7 @@
   <ul class="messages">
     <% messages.forEach(function(message){ %>
 	     <li class="panel">  	
+        <%= message.username %>
         <%= message.text %>
 	     </li>
      <% }) %>

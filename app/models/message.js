@@ -4,6 +4,8 @@ var mongoose = require('mongoose'),
 
 var MessageSchema = new Schema({
   text: String,
+  user_id: String,
+  username: String,
 });
 
 mongoose.model('Message', MessageSchema);
