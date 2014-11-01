@@ -26,6 +26,8 @@ io.on("connection",function(socket){
 	console.log("a user connected");
 });
 
+http.db = db;
+
 module.exports = http;
 if (!module.parent) {
   console.log('Server running on port ' + config.port)

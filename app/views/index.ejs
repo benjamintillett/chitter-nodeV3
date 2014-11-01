@@ -50,7 +50,7 @@
       <tbody>
         <% users_online.forEach(function(user,index){ %>
         <tr class=<%= user_colors[index%6] %>>
-          <td><%= user %></td>
+          <td><%= user.username %></td>
         </tr>
         <% }); %>
       </tbody>    
