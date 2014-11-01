@@ -6,6 +6,7 @@ var MessageSchema = new Schema({
   text: String,
   user_id: String,
   username: String,
+  color: String
 });
 
 mongoose.model('Message', MessageSchema);

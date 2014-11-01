@@ -34,8 +34,9 @@
   <ul class="messages">
     <% messages.forEach(function(message){ %>
 	     <li class="panel">  	
-        <%= message.username %>
+        <%= message.username %>:<br>
         <%= message.text %>
+        <%= message.color %>
 	     </li>
      <% }) %>
   </ul>
@@ -52,6 +53,7 @@
         <% users_online.forEach(function(user,index){ %>
         <tr class=<%= user_colors[index%6] %>>
           <td><%= user.username %></td>
+          <td><%= user.color %></td>
         </tr>
         <% }); %>
       </tbody>    

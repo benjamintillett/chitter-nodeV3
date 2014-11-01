@@ -27,7 +27,10 @@ router.get('/', function (req, res, next) {
 
 router.post("/", function (req,res,next){
 
-  var message = new Message({ text: req.body.message, user_id: req.session.user_id, username: req.session.username });
+  var message = new Message({ text:     req.body.message, 
+                              user_id:  req.session.user_id,
+                              color:    req.session.color, 
+                              username: req.session.username });
   message.save(function (err, fluffy) {
     if (err) {
       return console.error(err);
@@ -47,19 +50,19 @@ router.post("/signout",function(req,res,next){
 });
 
 router.post("/signup",function(req,res,next){
-  var user = new User({username: req.body.username });
-  user.save(function (err, user) {
-    if (err) {
-      return console.error(err);
-    }
-    else {
-      req.session.username = req.body.username;
-      req.session.user_id = user.id
-      console.log(user.id);
-      console.log(req.session.user_id)
-      users_online.push(user)
-      res.redirect("/");    
-    }
+  User.count(function(err,count){
+    var user = new User({username: req.body.username, color: user_colors[count%6] });
+    user.save(function (err, user) {
+      if (err) {
+        return console.error(err);
+      }
+      else {
+        req.session.username = req.body.username;
+        req.session.user_id = user.id
+        req.session.color = user.color
+        res.redirect("/");    
+      }
+    });
   });
 });
 
@@ -80,8 +83,6 @@ function getUsers(callback){
 }
 
 var user_colors = ["info", "success","danger","warning","active"]
-
-
 
 
 
