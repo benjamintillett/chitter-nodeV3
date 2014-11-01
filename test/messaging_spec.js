@@ -11,7 +11,7 @@ describe('messaging', function() {
     var browser;
     var socket;
     clean_db();
-    socketCleaner()
+    socketCleaner();
 
   before(function() {
     this.server = server.listen(3000);
@@ -38,6 +38,10 @@ describe('messaging', function() {
 
     it("redirects to the homepage",function(){
       expect(browser.text("h1.welcome-message")).to.eql("Welcome to Node Chat");
+    });
+
+    it("cointains messages of the correct color",function(){
+      expect(browser.query('.text-undefined')).to.be.ok
     });
 
     it("displays all messages on the homepage", function(){
