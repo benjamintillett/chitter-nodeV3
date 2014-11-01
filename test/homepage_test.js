@@ -3,14 +3,18 @@ var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
 var io = require('socket.io-client');
-var socketCleaner = require('./socketCleaner.js');
+var socketCleaner = require('./test_helpers/socketCleaner.js');
+var clean_db = require('./test_helpers/dbCleaner.js');
+
+
 
 describe('home page', function() {
   
   var browser;
   var socket;
   socketCleaner()
-  
+  clean_db();  
+
   before(function() {
     this.server = server.listen(3000);
     // initialize the browser using the same port as the test application
@@ -27,8 +31,7 @@ describe('home page', function() {
 
   it("has a form to add a peep",function(){
     browser.
-      fill("message", "hello this is marvelous").
-      pressButton("Submit")
+      fill("message", "hello this is marvelous")
   });
 
 });

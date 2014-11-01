@@ -3,22 +3,17 @@ var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
 var io = require('socket.io-client');
-var socketCleaner = require('./socketCleaner.js');
-var mongoose = require('mongoose');
+var socketCleaner = require('./test_helpers/socketCleaner.js');
+var clean_db = require('./test_helpers/dbCleaner.js');
 
-  beforeEach(function (done) {   
-      mongoose.connect('mongodb://localhost/chitter-node3-test', function(){
-          mongoose.connection.db.dropDatabase(function(){
-              done()
-          })    
-      })
-  })
 
 describe('Signup feature', function() {
+
   var browser;
   var socket;
-  socketCleaner()
-  
+  socketCleaner();
+  clean_db();
+
   before(function() {
     this.server = server.listen(3000);
     // initialize the browser using the same port as the test application

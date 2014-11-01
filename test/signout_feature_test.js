@@ -3,23 +3,16 @@ var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
 var io = require('socket.io-client');
-var socketCleaner = require('./socketCleaner.js');
-var mongoose = require('mongoose');
-
-beforeEach(function (done) {   
-    mongoose.connect('mongodb://localhost/chitter-node3-test', function(){
-        mongoose.connection.db.dropDatabase(function(){
-            done()
-        })    
-    })
-})
-
+var socketCleaner = require('./test_helpers/socketCleaner.js');
+var clean_db = require('./test_helpers/dbCleaner.js');
 
 describe('Signout feature', function() {
-  var browser;
 
   var browser;
   var socket;
+  socketCleaner();
+  clean_db();
+
   
 
 

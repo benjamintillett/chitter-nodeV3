@@ -3,14 +3,14 @@ var server = require('../app');
 var expect = require('expect.js')
 var Browser = require('zombie');
 var io = require('socket.io-client');
-var socketCleaner = require('./socketCleaner.js');
+var socketCleaner = require('./test_helpers/socketCleaner.js');
+var clean_db = require('./test_helpers/dbCleaner.js');
+
 
 describe('messaging', function() {
     var browser;
-
-
     var socket;
-
+    clean_db();
     socketCleaner()
 
   before(function() {

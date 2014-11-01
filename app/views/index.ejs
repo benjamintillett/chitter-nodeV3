@@ -33,7 +33,7 @@
   <% } %>
   <ul class="messages">
     <% messages.forEach(function(message){ %>
-	     <li class="panel">  	
+	     <li class="panel text-<%= message.color %>">  	
         <%= message.username %>:<br>
         <%= message.text %>
         <%= message.color %>
