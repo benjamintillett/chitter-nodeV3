@@ -10,11 +10,11 @@ module.exports = function (app) {
 
 router.get('/', function (req, res, next) {
   getUsers(function(){
-    Message.find(function (err, messages) {
+    Message.find(function (err, messages) {     
       if (err) return next(err);
       res.render('index', {
-        title: 'Generator-Express MVC',
-        messages: messages,
+        title: 'Node Chat',
+        messages: messages.reverse(),
         username: req.session.username,
         alert: req.flash('alert'),
         users_online: users_online,

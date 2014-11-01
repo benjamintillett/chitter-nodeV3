@@ -45,11 +45,33 @@ describe('messaging', function() {
     });
 
     it("displays all messages on the homepage", function(){
-		browser.visit('/').then(function(){
     		expect(browser.text(".messages")).to.contain("hello this is marvelous");
-    	});
     });
   });
+
+  describe("multiple message",function(){
+    before(function(done){
+      browser.visit('/',function(){
+        browser.
+          fill("message", "hello this is marvelous").
+          pressButton("Submit",function(){
+            browser.
+              fill("message", "this is a second message").
+              pressButton("Submit",done)
+          });
+      });
+    });
+    it("displays all messages on the homepage", function(){
+        expect(browser.text(".messages")).to.contain("this is a second message");
+        expect(browser.text(".messages")).to.contain("hello this is marvelous");
+    });    
+    it("displays the messages on the correct order",function(){
+        expect(browser.text(".messages > :first-child")).to.contain("this is a second message");
+    })
+
+  });
+
+
  });
 
 
