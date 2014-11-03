@@ -6,6 +6,8 @@ var express = require('express'),
 mongoose.connect(config.db);
 var db = mongoose.connection;
 
+var current_user;
+
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
 });
@@ -24,6 +26,10 @@ require('./config/express')(app, config);
 
 io.on("connection",function(socket){
 	console.log("a user connected");
+	socket.on('message',function(msg){
+		console.log(msg);
+		console.log(app.current_user);
+	});
 });
 
 http.db = db;

@@ -4,6 +4,7 @@ var express = require('express'),
   Message = mongoose.model('Message'),
   User = mongoose.model('User');
 
+
 module.exports = function (app) {
   app.use('/', router);
 };
@@ -65,6 +66,8 @@ router.post("/signup",function(req,res,next){
     });
   });
 });
+
+
 
 
 

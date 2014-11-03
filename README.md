@@ -7,9 +7,10 @@ Skills learnt/used
 -----------------
 TTD - with Mocha and zombie
 Nosql - with MongoDb
-Node
+Node.js
 Express
 Mocha
+socket.io
 
 
 How to use
