@@ -7,12 +7,12 @@ A chat application written in node using web sockets mongodb and angular.js.
 
 Skills learnt/used
 -----------------
-TTD - with Mocha and zombie
-Nosql - with MongoDb
-Node.js
-Express
-Mocha
-socket.io
+> * TTD - with Mocha and zombie
+> * Nosql - with MongoDb
+> * Node.js
+> * Express
+> * Mocha
+> * socket.io
 
 ![Screenshot of welcome page](screenshot.png)
 
