@@ -1,7 +1,9 @@
 Node chat
 ==========
 
-A simple chat application written in node
+In progress!!!
+
+A chat application written in node using web sockets mongodb and angular.js.
 
 Skills learnt/used
 -----------------
@@ -11,6 +13,8 @@ Node.js
 Express
 Mocha
 socket.io
+
+![Screenshot of welcome page](screenshot.png)
 
 
 How to use
@@ -28,3 +32,10 @@ run rspec to view the tests:
 ```shell 
 $ mocha
 ```
+
+Start up the server 
+
+```shell 
+$ npm start
+```
+Point your browser to localhost:3000
