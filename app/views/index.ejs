@@ -7,7 +7,7 @@
   
   <br>
   <div class="col-md-7">
-  
+
   <% if(alert.length !== 0) { %>
     <div class="alert alert-success" role="alert"><%= alert %></div>
   <% } %>
@@ -47,7 +47,6 @@
         <% users_online.forEach(function(user,index){ %>
         <tr class=<%= user_colors[index%6] %>>
           <td><%= user.username %></td>
-          <td><%= user.color %></td>
         </tr>
         <% }); %>
       </tbody>    
