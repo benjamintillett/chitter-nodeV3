@@ -3,7 +3,8 @@ Node chat
 
 In progress!!!
 
-A chat application written in node using web sockets mongodb and angular.js.
+A chat application written with node.js express, mongodb and mongoose. 
+Tested with mocha and Zombie
 
 Skills learnt/used
 -----------------
@@ -11,10 +12,23 @@ Skills learnt/used
 > * Nosql - with MongoDb
 > * Node.js
 > * Express
-> * Mocha
-> * socket.io
+
 
 ![Screenshot of welcome page](screenshot.png)
+
+[click here](https://cryptic-retreat-7314.herokuapp.com/) to check it out online.
+
+![Screenshot of sign up](signup.png)
+
+Sign up!
+
+![Screenshot of send message](sendingmessage.png)
+
+Send a message...
+
+![Screenshot of sent message](sentmessage.png)
+
+Take a look
 
 
 How to use
@@ -27,7 +41,7 @@ $ git clone git@github.com:benjamintillett/node_chat.git
 ```
 
 
-run rspec to view the tests:
+run mocha to view the tests:
 
 ```shell 
 $ mocha
@@ -38,4 +52,5 @@ Start up the server
 ```shell 
 $ npm start
 ```
+
 Point your browser to localhost:3000
