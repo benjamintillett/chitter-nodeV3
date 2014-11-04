@@ -6,28 +6,8 @@
   <% } %>
   
   <br>
-  <div class="col-md-8">
-  <div class="panel">
+  <div class="col-md-7">
   
-
-
-    <form role="form" class="message-form" action="/" method="post">
-    <h3>New message</h3>
-      <div class="form-group">
-    	   <textarea class="form-control" id="message-content" rows="2" name="message"></textarea>
-      </div>
-      <div class="form-group">
-    	   <button type="submit" class="btn btn-info">Submit</button>
-      </div>
-    </form>
-  </div>
-
-
-  <br>
-
-  <h1>Messages</h1>
-  <br>
-
   <% if(alert.length !== 0) { %>
     <div class="alert alert-success" role="alert"><%= alert %></div>
   <% } %>
@@ -40,7 +20,22 @@
      <% }) %>
   </ul>
 </div>
-<div class="col-md-4">
+<div class="col-md-5">
+    <div class="panel">
+  
+
+
+    <form role="form" class="message-form" action="/" method="post">
+    <h3>New message</h3>
+      <div class="form-group">
+         <textarea class="form-control" id="message-content" rows="2" name="message"></textarea>
+      </div>
+      <div class="form-group">
+         <button type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </form>
+  </div>
+
   <div class="panel">
     <table class="table table-striped table-hover">
       <thead>
